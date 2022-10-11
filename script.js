@@ -2,7 +2,7 @@ let matrix = [];
 let side = 25;
 let grassArr = [];
 let grassEaterArr = [];
-let predatorArr =[];
+let predatorArr = [];
 let hunterArr = [];
 let RubbitArr = [];
 function setup() {
@@ -16,10 +16,10 @@ function setup() {
                 let grass = new Grass(x, y);
                 grassArr.push(grass);
             }
-             if (matrix[y][x] == 2) {
-                 let grassEater = new GrassEater(x, y);
+            if (matrix[y][x] == 2) {
+                let grassEater = new GrassEater(x, y);
                 grassEaterArr.push(grassEater);
-             }           
+            }
             if (matrix[y][x] == 3) {
                 let predator = new Predator(x, y);
                 predatorArr.push(predator);
@@ -29,7 +29,7 @@ function setup() {
                 hunterArr.push(hunter);
             }
             if (matrix[y][x] == 6) {
-                let rubbit= new Rubbit(x, y);
+                let rubbit = new Rubbit(x, y);
                 RubbitArr.push(rubbit);
             }
         }
@@ -44,43 +44,43 @@ function setup() {
         for (let i = 0; i < grass; i++) {
             let x = Math.floor(Math.random() * matrixSize)
             let y = Math.floor(Math.random() * matrixSize)
-  
+
             if (matrix[y][x] == 0) {
                 matrix[y][x] = 1
-           }
+            }
         }
         for (let i = 0; i < grassEater; i++) {
 
             let x = Math.floor(Math.random() * matrixSize)
             let y = Math.floor(Math.random() * matrixSize)
-  
+
             if (matrix[y][x] == 0) {
-                 matrix[y][x] = 2
+                matrix[y][x] = 2
             }
-       }
+        }
         for (let i = 0; i < Predator; i++) {
             let x = Math.floor(Math.random() * matrixSize)
             let y = Math.floor(Math.random() * matrixSize)
-  
+
             if (matrix[y][x] == 0) {
                 matrix[y][x] = 3
-           }
+            }
         }
         for (let i = 0; i < Hunter; i++) {
             let x = Math.floor(Math.random() * matrixSize)
             let y = Math.floor(Math.random() * matrixSize)
-  
+
             if (matrix[y][x] == 0) {
                 matrix[y][x] = 4
-           }
+            }
         }
         for (let i = 0; i < Rubbit; i++) {
             let x = Math.floor(Math.random() * matrixSize)
             let y = Math.floor(Math.random() * matrixSize)
-  
+
             if (matrix[y][x] == 0) {
                 matrix[y][x] = 6
-           }
+            }
         }
     }
 }
@@ -88,10 +88,10 @@ function setup() {
 function draw() {
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
-            R = random(0,255);
-            G = random(0,255);
-            B = random(0,255);
-            
+            R = random(0, 255);
+            G = random(0, 255);
+            B = random(0, 255);
+
             if (matrix[y][x] == 1) {
                 fill("green");
             }
@@ -116,7 +116,7 @@ function draw() {
             else if (matrix[y][x] == 7) {
                 fill(R, G, B);
             }
-            
+
             rect(x * side, y * side, side, side);
 
             for (var i in grassArr) {
