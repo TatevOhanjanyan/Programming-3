@@ -1,10 +1,5 @@
-class Hunter {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        this.life = 250;
-        this.directions = [];
-    }
+class Hunter extends LivingCreature {
+    
     getNewCoordinates() {
         this.directions = [
             [this.x, this.y],
